@@ -410,29 +410,29 @@ export default function FinanzApp() {
 
   // ── Styles ──
   const s = {
-    app: { minHeight:"100vh", background:"#09090f", color:"#ededf5", fontFamily:"'Syne', sans-serif", maxWidth:430, margin:"0 auto", position:"relative", paddingBottom:88, overflow:"hidden" },
-    blob: (c, t, l, size) => ({ position:"fixed", borderRadius:"50%", filter:"blur(90px)", opacity:0.1, background:c, width:size, height:size, top:t, left:l, pointerEvents:"none", zIndex:0 }),
-    glas: { background:"rgba(255,255,255,0.035)", border:"1px solid rgba(255,255,255,0.07)", borderRadius:18, backdropFilter:"blur(10px)" },
-    karte: { background:"linear-gradient(135deg, rgba(224,123,84,0.18), rgba(84,136,224,0.12))", border:"1px solid rgba(224,123,84,0.25)", borderRadius:22, padding:"22px 20px" },
+    app: { minHeight:"100vh", background:"#0d0d0d", color:"#f5f5f0", fontFamily:"'Inter',sans-serif", maxWidth:"100%", margin:"0 auto", position:"relative", paddingBottom:96, overflow:"hidden" },
+    blob: (c, t, l, size) => ({ position:"fixed", borderRadius:"50%", filter:"blur(70px)", opacity:0.18, background:c, width:size, height:size, top:t, left:l, pointerEvents:"none", zIndex:0 }),
+    glas: { background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:20, backdropFilter:"blur(16px)" },
+    karte: { background:"linear-gradient(145deg, rgba(230,130,80,0.22), rgba(60,60,80,0.18))", border:"1px solid rgba(230,130,80,0.3)", borderRadius:24, padding:"28px 24px" },
     btn: (v="primär") => ({
-      background: v==="primär" ? "linear-gradient(135deg,#e07b54,#e05480)" : v==="ghost" ? "transparent" : "rgba(255,255,255,0.05)",
-      color: v==="ghost" ? "#555" : "#fff",
-      border: v==="ghost" ? "1px solid rgba(255,255,255,0.08)" : "none",
-      borderRadius:14, padding:"13px 20px", fontSize:15, fontWeight:600, cursor:"pointer", width:"100%",
-      fontFamily:"'Syne',sans-serif", transition:"opacity 0.15s",
+      background: v==="primär" ? "linear-gradient(135deg,#e07b54,#c45080)" : v==="ghost" ? "transparent" : "rgba(255,255,255,0.06)",
+      color: v==="ghost" ? "#666" : "#fff",
+      border: v==="ghost" ? "1px solid rgba(255,255,255,0.1)" : "none",
+      borderRadius:16, padding:"17px 24px", fontSize:17, fontWeight:600, cursor:"pointer", width:"100%",
+      fontFamily:"'Inter',sans-serif", transition:"opacity 0.15s", letterSpacing:"-0.01em",
     }),
     pille: (aktiv, farbe) => ({
-      padding:"5px 13px", borderRadius:30, fontSize:12, cursor:"pointer", whiteSpace:"nowrap",
-      background: aktiv ? (farbe || "rgba(224,123,84,0.9)") : "rgba(255,255,255,0.05)",
-      color: aktiv ? "#fff" : "#666",
-      border: aktiv ? "none" : "1px solid rgba(255,255,255,0.07)",
-      transition:"all 0.2s", fontFamily:"'Syne',sans-serif",
+      padding:"8px 16px", borderRadius:30, fontSize:13, cursor:"pointer", whiteSpace:"nowrap",
+      background: aktiv ? (farbe || "rgba(224,123,84,0.95)") : "rgba(255,255,255,0.06)",
+      color: aktiv ? "#fff" : "#777",
+      border: aktiv ? "none" : "1px solid rgba(255,255,255,0.08)",
+      transition:"all 0.2s", fontFamily:"'Inter',sans-serif", fontWeight: aktiv ? 600 : 400,
     }),
-    input: { background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.09)", borderRadius:12, padding:"13px 16px", color:"#ededf5", fontSize:15, width:"100%", outline:"none", fontFamily:"'Syne',sans-serif", boxSizing:"border-box" },
-    label: { fontSize:11, color:"#555", marginBottom:6, display:"block", letterSpacing:"0.06em", textTransform:"uppercase" },
-    sektion: { padding:"0 18px", marginBottom:18, position:"relative", zIndex:1 },
-    nav: { position:"fixed", bottom:0, left:"50%", transform:"translateX(-50%)", width:"100%", maxWidth:430, background:"rgba(9,9,15,0.97)", backdropFilter:"blur(20px)", borderTop:"1px solid rgba(255,255,255,0.05)", display:"flex", justifyContent:"space-around", padding:"10px 0 22px", zIndex:100 },
-    navItem: (a) => ({ display:"flex", flexDirection:"column", alignItems:"center", gap:3, cursor:"pointer", padding:"4px 14px", color:a?"#e07b54":"#444", transition:"color 0.2s" }),
+    input: { background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:14, padding:"16px 18px", color:"#f5f5f0", fontSize:17, width:"100%", outline:"none", fontFamily:"'Inter',sans-serif", boxSizing:"border-box" },
+    label: { fontSize:12, color:"#666", marginBottom:8, display:"block", letterSpacing:"0.05em", textTransform:"uppercase", fontWeight:500 },
+    sektion: { padding:"0 20px", marginBottom:20, position:"relative", zIndex:1 },
+    nav: { position:"fixed", bottom:0, left:0, right:0, width:"100%", background:"rgba(13,13,13,0.97)", backdropFilter:"blur(24px)", borderTop:"1px solid rgba(255,255,255,0.07)", display:"flex", justifyContent:"space-around", padding:"14px 0 28px", zIndex:100 },
+    navItem: (a) => ({ display:"flex", flexDirection:"column", alignItems:"center", gap:4, cursor:"pointer", padding:"4px 20px", color:a?"#e07b54":"#555", transition:"color 0.2s" }),
   };
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -440,8 +440,16 @@ export default function FinanzApp() {
   // ─────────────────────────────────────────────────────────────────────────
   return (
     <>
-      <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
       <div style={s.app}>
+        <svg style={{position:"fixed",width:0,height:0}}>
+          <filter id="grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+            <feBlend in="SourceGraphic" mode="multiply"/>
+          </filter>
+        </svg>
+        <div style={{position:"fixed",inset:0,opacity:0.035,pointerEvents:"none",zIndex:0,backgroundImage:"url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")",backgroundSize:"256px 256px"}} />
         <div style={s.blob("#e07b54",-60,-60,300)} />
         <div style={s.blob("#5488e0","35%","55%",260)} />
         <div style={s.blob("#a054e0","75%",-80,220)} />
@@ -472,16 +480,16 @@ export default function FinanzApp() {
         )}
 
         {/* ── HEADER ── */}
-        <div style={{ ...s.sektion, paddingTop:52, paddingBottom:0, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+        <div style={{ ...s.sektion, paddingTop:60, paddingBottom:0, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
           <div>
-            <div style={{ fontSize:11, color:"#555", letterSpacing:"0.1em", textTransform:"uppercase" }}>Haushaltskasse</div>
-            <div style={{ fontSize:22, fontWeight:800, letterSpacing:"-0.02em" }}>
+            <div style={{ fontSize:12, color:"#666", letterSpacing:"0.08em", textTransform:"uppercase", fontWeight:500 }}>Haushaltskasse</div>
+            <div style={{ fontSize:28, fontWeight:700, letterSpacing:"-0.03em" }}>
               {ansicht === "dashboard" ? "Übersicht" : ansicht === "hinzufügen" ? (bearbeitenId ? "Bearbeiten" : "Neu") : ansicht === "einträge" ? "Einträge" : ansicht === "sparen" ? "Sparen" : "Wiederkehrend"}
             </div>
           </div>
           <div style={{ display:"flex", gap:10 }}>
-            <div onClick={() => setImportModal(true)} style={{ width:36, height:36, borderRadius:"50%", background:"rgba(255,255,255,0.06)", border:"1px solid rgba(255,255,255,0.08)", display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", fontSize:16 }} title="Notion Import">📥</div>
-            <div onClick={() => { setBearbeitenId(null); setForm(leerForm); setAnsicht("hinzufügen"); }} style={{ width:36, height:36, borderRadius:"50%", background:"linear-gradient(135deg,#e07b54,#e05480)", display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", fontSize:20, fontWeight:300 }}>+</div>
+            <div onClick={() => setImportModal(true)} style={{ width:44, height:44, borderRadius:"50%", background:"rgba(255,255,255,0.07)", border:"1px solid rgba(255,255,255,0.1)", display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", fontSize:18 }} title="Notion Import">📥</div>
+            <div onClick={() => { setBearbeitenId(null); setForm(leerForm); setAnsicht("hinzufügen"); }} style={{ width:44, height:44, borderRadius:"50%", background:"linear-gradient(135deg,#e07b54,#c45080)", display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", fontSize:20, fontWeight:300 }}>+</div>
           </div>
         </div>
 
@@ -492,7 +500,7 @@ export default function FinanzApp() {
             <div style={{ ...s.sektion, marginTop:20 }}>
               <div style={s.karte}>
                 <div style={{ fontSize:11, color:"rgba(255,255,255,0.4)", marginBottom:4 }}>Gesamtsaldo</div>
-                <div style={{ fontSize:36, fontWeight:800, letterSpacing:"-0.03em", fontFamily:"'DM Mono',monospace" }}>
+                <div style={{ fontSize:42, fontWeight:700, letterSpacing:"-0.04em", fontFamily:"'DM Mono',monospace" }}>
                   {stats.gesamtSaldo >= 0 ? "+" : "−"}€{Math.abs(stats.gesamtSaldo).toLocaleString("de-DE",{minimumFractionDigits:2})}
                 </div>
                 <div style={{ display:"flex", gap:24, marginTop:14 }}>
@@ -570,19 +578,19 @@ export default function FinanzApp() {
             {/* Wiederkehrende fällig */}
             {wiederkehrend.length > 0 && (
               <div style={s.sektion}>
-                <div style={{ fontSize:11, color:"#555", marginBottom:10, textTransform:"uppercase", letterSpacing:"0.06em" }}>Monatlich fällig</div>
+                <div style={{ fontSize:12, color:"#555", marginBottom:12, textTransform:"uppercase", letterSpacing:"0.06em", fontWeight:500 }}>Monatlich fällig</div>
                 {wiederkehrend.map(r => (
-                  <div key={r.id} style={{ ...s.glas, padding:"12px 16px", marginBottom:8, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                  <div key={r.id} style={{ ...s.glas, padding:"16px 18px", marginBottom:10, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                     <div style={{ display:"flex", gap:12, alignItems:"center" }}>
                       <span style={{ fontSize:20 }}>{KAT_MAP[r.kategorie]?.icon}</span>
                       <div>
-                        <div style={{ fontSize:14, fontWeight:600 }}>{r.name}</div>
+                        <div style={{ fontSize:16, fontWeight:600 }}>{r.name}</div>
                         <div style={{ fontSize:11, color:"#555" }}>monatlich</div>
                       </div>
                     </div>
                     <div style={{ display:"flex", gap:8, alignItems:"center" }}>
                       <span style={{ fontFamily:"'DM Mono',monospace", color:"#e07b54", fontSize:13 }}>€{r.betrag.toLocaleString("de-DE",{minimumFractionDigits:2})}</span>
-                      <button onClick={() => wiederkehrendBuchen(r)} style={{ background:"rgba(84,224,138,0.12)", border:"1px solid rgba(84,224,138,0.25)", color:"#54e08a", borderRadius:8, padding:"4px 10px", fontSize:11, cursor:"pointer", fontFamily:"'Syne',sans-serif" }}>Buchen</button>
+                      <button onClick={() => wiederkehrendBuchen(r)} style={{ background:"rgba(84,224,138,0.12)", border:"1px solid rgba(84,224,138,0.25)", color:"#54e08a", borderRadius:8, padding:"4px 10px", fontSize:11, cursor:"pointer", fontFamily:"'Inter',sans-serif" }}>Buchen</button>
                     </div>
                   </div>
                 ))}
@@ -593,21 +601,21 @@ export default function FinanzApp() {
             <div style={s.sektion}>
               <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:10 }}>
                 <div style={{ fontSize:11, color:"#555", textTransform:"uppercase", letterSpacing:"0.06em" }}>Zuletzt</div>
-                <button onClick={() => setAnsicht("einträge")} style={{ fontSize:11, color:"#e07b54", background:"none", border:"none", cursor:"pointer", fontFamily:"'Syne',sans-serif" }}>Alle →</button>
+                <button onClick={() => setAnsicht("einträge")} style={{ fontSize:11, color:"#e07b54", background:"none", border:"none", cursor:"pointer", fontFamily:"'Inter',sans-serif" }}>Alle →</button>
               </div>
               {dbLaden && <div style={{ color:"#444", fontSize:13, textAlign:"center", padding:20 }}>Lade...</div>}
               {einträge.slice(0,5).map(e => (
-                <div key={e.id} style={{ ...s.glas, padding:"12px 16px", marginBottom:8, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                <div key={e.id} style={{ ...s.glas, padding:"16px 18px", marginBottom:10, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                   <div style={{ display:"flex", gap:12, alignItems:"center" }}>
-                    <div style={{ width:36, height:36, borderRadius:10, background:`${KAT_MAP[e.kategorie]?.farbe || "#888"}20`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18 }}>
+                    <div style={{ width:44, height:44, borderRadius:12, background:`${KAT_MAP[e.kategorie]?.farbe || "#888"}20`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18 }}>
                       {KAT_MAP[e.kategorie]?.icon}
                     </div>
                     <div>
-                      <div style={{ fontSize:14, fontWeight:600 }}>{e.name}</div>
+                      <div style={{ fontSize:16, fontWeight:600 }}>{e.name}</div>
                       <div style={{ fontSize:11, color:"#555" }}>{datumFmt(e.datum)}</div>
                     </div>
                   </div>
-                  <span style={{ fontFamily:"'DM Mono',monospace", fontSize:14, fontWeight:500, color: e.kategorie==="sparen" ? "#54e0d4" : e.typ==="einnahme" ? "#54e08a" : "#e07b54" }}>
+                  <span style={{ fontFamily:"'DM Mono',monospace", fontSize:16, fontWeight:600, color: e.kategorie==="sparen" ? "#54e0d4" : e.typ==="einnahme" ? "#54e08a" : "#e07b54" }}>
                     {e.kategorie==="sparen" ? "⇢" : e.typ==="einnahme" ? "+" : "−"}€{e.betrag.toLocaleString("de-DE",{minimumFractionDigits:2})}
                   </span>
                 </div>
@@ -619,7 +627,7 @@ export default function FinanzApp() {
 
         {/* ═══════════════════ HINZUFÜGEN / BEARBEITEN ═══════════════════ */}
         {ansicht === "hinzufügen" && (
-          <div style={{ ...s.sektion, paddingTop:20 }}>
+          <div style={{ ...s.sektion, paddingTop:24 }}>
             {/* Typ */}
             <div style={{ display:"flex", gap:8, marginBottom:20 }}>
               {[["ausgabe","↓ Ausgabe"],["einnahme","↑ Einnahme"],["sparen","⇢ Sparen"]].map(([t,l]) => (
@@ -675,7 +683,7 @@ export default function FinanzApp() {
 
         {/* ═══════════════════ ALLE EINTRÄGE ═══════════════════ */}
         {ansicht === "einträge" && (
-          <div style={{ ...s.sektion, paddingTop:20 }}>
+          <div style={{ ...s.sektion, paddingTop:24 }}>
             {/* Kategorie-Filter */}
             <div style={{ marginBottom:10 }}>
               <div style={{ fontSize:10, color:"#555", marginBottom:6, textTransform:"uppercase", letterSpacing:"0.06em" }}>Kategorie</div>
@@ -700,7 +708,7 @@ export default function FinanzApp() {
               </span>
             </div>
             {gefilterteEinträge.map(e => (
-              <div key={e.id} style={{ ...s.glas, padding:"12px 16px", marginBottom:8, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+              <div key={e.id} style={{ ...s.glas, padding:"16px 18px", marginBottom:10, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                 <div style={{ display:"flex", gap:12, alignItems:"center", flex:1, minWidth:0 }}>
                   <div style={{ width:36, height:36, flexShrink:0, borderRadius:10, background:`${KAT_MAP[e.kategorie]?.farbe||"#888"}20`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18 }}>
                     {KAT_MAP[e.kategorie]?.icon}
@@ -712,7 +720,7 @@ export default function FinanzApp() {
                   </div>
                 </div>
                 <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-end", gap:6, flexShrink:0 }}>
-                  <span style={{ fontFamily:"'DM Mono',monospace", fontSize:13, fontWeight:500, color: e.kategorie==="sparen" ? "#54e0d4" : e.typ==="einnahme" ? "#54e08a" : "#e07b54" }}>
+                  <span style={{ fontFamily:"'DM Mono',monospace", fontSize:15, fontWeight:500, color: e.kategorie==="sparen" ? "#54e0d4" : e.typ==="einnahme" ? "#54e08a" : "#e07b54" }}>
                     {e.kategorie==="sparen" ? "⇢" : e.typ==="einnahme" ? "+" : "−"}€{e.betrag.toLocaleString("de-DE",{minimumFractionDigits:2})}
                   </span>
                   <div style={{ display:"flex", gap:5 }}>
@@ -728,7 +736,7 @@ export default function FinanzApp() {
 
         {/* ═══════════════════ SPAREN ═══════════════════ */}
         {ansicht === "sparen" && (
-          <div style={{ ...s.sektion, paddingTop:20 }}>
+          <div style={{ ...s.sektion, paddingTop:24 }}>
             {/* Sparsumme gesamt */}
             <div style={{ ...s.karte, background:"linear-gradient(135deg, rgba(84,224,212,0.18), rgba(84,136,224,0.12))", border:"1px solid rgba(84,224,212,0.25)", marginBottom:20 }}>
               <div style={{ fontSize:11, color:"rgba(84,224,212,0.7)", marginBottom:4 }}>Gesamt gespart</div>
@@ -748,14 +756,14 @@ export default function FinanzApp() {
             </div>
 
             {/* Sparziele */}
-            <div style={{ fontSize:11, color:"#555", marginBottom:10, textTransform:"uppercase", letterSpacing:"0.06em" }}>Sparziele</div>
+            <div style={{ fontSize:12, color:"#555", marginBottom:12, textTransform:"uppercase", letterSpacing:"0.06em", fontWeight:500 }}>Sparziele</div>
             {sparziele.map(sz => {
               const pct = Math.min(100, (sz.aktuell / sz.ziel) * 100);
               return (
                 <div key={sz.id} style={{ ...s.glas, padding:"16px", marginBottom:10 }}>
                   <div style={{ display:"flex", justifyContent:"space-between", marginBottom:8 }}>
-                    <div style={{ fontSize:14, fontWeight:600 }}>{sz.name}</div>
-                    <span style={{ fontFamily:"'DM Mono',monospace", fontSize:13, color:"#54e0d4" }}>€{(sz.aktuell||0).toLocaleString("de-DE",{minimumFractionDigits:0})} / €{sz.ziel.toLocaleString("de-DE")}</span>
+                    <div style={{ fontSize:16, fontWeight:600 }}>{sz.name}</div>
+                    <span style={{ fontFamily:"'DM Mono',monospace", fontSize:15, color:"#54e0d4" }}>€{(sz.aktuell||0).toLocaleString("de-DE",{minimumFractionDigits:0})} / €{sz.ziel.toLocaleString("de-DE")}</span>
                   </div>
                   <div style={{ background:"rgba(255,255,255,0.06)", borderRadius:6, height:6, overflow:"hidden" }}>
                     <div style={{ height:"100%", width:`${pct}%`, background:sz.farbe||"#54e0d4", borderRadius:6, transition:"width 0.5s ease" }} />
@@ -782,9 +790,9 @@ export default function FinanzApp() {
             {/* Alle Spar-Einträge */}
             <div style={{ fontSize:11, color:"#555", marginTop:20, marginBottom:10, textTransform:"uppercase", letterSpacing:"0.06em" }}>Buchungen</div>
             {einträge.filter(e => e.kategorie === "sparen").slice(0,10).map(e => (
-              <div key={e.id} style={{ ...s.glas, padding:"12px 16px", marginBottom:8, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+              <div key={e.id} style={{ ...s.glas, padding:"16px 18px", marginBottom:10, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                 <div>
-                  <div style={{ fontSize:14, fontWeight:600 }}>{e.name}</div>
+                  <div style={{ fontSize:16, fontWeight:600 }}>{e.name}</div>
                   <div style={{ fontSize:11, color:"#555" }}>{datumFmt(e.datum)}</div>
                 </div>
                 <span style={{ fontFamily:"'DM Mono',monospace", color:"#54e0d4", fontSize:14 }}>⇢ €{e.betrag.toLocaleString("de-DE",{minimumFractionDigits:2})}</span>
@@ -795,14 +803,14 @@ export default function FinanzApp() {
 
         {/* ═══════════════════ WIEDERKEHREND ═══════════════════ */}
         {ansicht === "wiederkehrend" && (
-          <div style={{ ...s.sektion, paddingTop:20 }}>
+          <div style={{ ...s.sektion, paddingTop:24 }}>
             <div style={{ fontSize:13, color:"#555", marginBottom:20, lineHeight:1.6 }}>Monatliche Vorlagen · "Buchen" fügt sie mit heutigem Datum ein.</div>
             {wiederkehrend.length === 0 && <div style={{ textAlign:"center", color:"#333", padding:"40px 0", fontSize:13 }}>Noch keine Vorlagen.<br/>Toggle "Monatlich" beim Erfassen aktivieren.</div>}
             {wiederkehrend.map(r => (
               <div key={r.id} style={{ ...s.glas, padding:"16px", marginBottom:10 }}>
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                   <div style={{ display:"flex", gap:12, alignItems:"center" }}>
-                    <div style={{ width:38, height:38, borderRadius:10, background:`${KAT_MAP[r.kategorie]?.farbe||"#888"}22`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>
+                    <div style={{ width:46, height:46, borderRadius:12, background:`${KAT_MAP[r.kategorie]?.farbe||"#888"}22`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>
                       {KAT_MAP[r.kategorie]?.icon}
                     </div>
                     <div>
@@ -813,7 +821,7 @@ export default function FinanzApp() {
                   <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-end", gap:8 }}>
                     <span style={{ fontFamily:"'DM Mono',monospace", color:"#e07b54", fontSize:14 }}>€{r.betrag.toLocaleString("de-DE",{minimumFractionDigits:2})}</span>
                     <div style={{ display:"flex", gap:6 }}>
-                      <button onClick={() => wiederkehrendBuchen(r)} style={{ background:"rgba(84,224,138,0.12)", border:"1px solid rgba(84,224,138,0.2)", color:"#54e08a", borderRadius:8, padding:"5px 12px", fontSize:12, cursor:"pointer", fontFamily:"'Syne',sans-serif" }}>Buchen</button>
+                      <button onClick={() => wiederkehrendBuchen(r)} style={{ background:"rgba(84,224,138,0.12)", border:"1px solid rgba(84,224,138,0.2)", color:"#54e08a", borderRadius:8, padding:"5px 12px", fontSize:12, cursor:"pointer", fontFamily:"'Inter',sans-serif" }}>Buchen</button>
                       <button onClick={async () => {
                         if (!confirm("Vorlage löschen?")) return;
                         if (demoModus) {
@@ -842,8 +850,8 @@ export default function FinanzApp() {
             { id:"wiederkehrend", icon:"↺", label:"Monatlich" },
           ].map(n => (
             <div key={n.id} style={s.navItem(ansicht===n.id)} onClick={() => setAnsicht(n.id)}>
-              <span style={{ fontSize:18 }}>{n.icon}</span>
-              <span style={{ fontSize:9, fontWeight:600, letterSpacing:"0.03em" }}>{n.label}</span>
+              <span style={{ fontSize:22 }}>{n.icon}</span>
+              <span style={{ fontSize:11, fontWeight:600, letterSpacing:"0.02em" }}>{n.label}</span>
             </div>
           ))}
         </nav>
