@@ -442,14 +442,7 @@ export default function FinanzApp() {
     <>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
       <div style={s.app}>
-        <svg style={{position:"fixed",width:0,height:0}}>
-          <filter id="grain">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
-            <feColorMatrix type="saturate" values="0"/>
-            <feBlend in="SourceGraphic" mode="multiply"/>
-          </filter>
-        </svg>
-        <div style={{position:"fixed",inset:0,opacity:0.035,pointerEvents:"none",zIndex:0,backgroundImage:"url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")",backgroundSize:"256px 256px"}} />
+
         <div style={s.blob("#e07b54",-60,-60,300)} />
         <div style={s.blob("#5488e0","35%","55%",260)} />
         <div style={s.blob("#a054e0","75%",-80,220)} />
